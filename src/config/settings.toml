@@ -1,0 +1,18 @@
+# This is a comment
+
+[DEFAULT]
+CURRENT_CONFIG = "default"
+
+TCP_SERVER_HOST = "0.0.0.0"
+TCP_SERVER_PORT = 8080
+
+
+
+[PRODUCTION]
+CURRENT_CONFIG = "production"
+TCP_SERVER_HOST = "8.8.8.8"
+
+
+[TESTING]
+CURRENT_CONFIG = "testing"
+TCP_SERVER_HOST = "127.0.0.1"
