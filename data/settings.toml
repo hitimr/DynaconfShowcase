@@ -1,0 +1,25 @@
+[DEFAULT]
+CURRENT_CONFIG = "default"
+
+TCP_SERVER_HOST = "0.0.0.0"
+TCP_SERVER_PORT = 8080
+TCP_SERVER_IDLE_TIMEOUT = 300 
+
+
+[PRODUCTION]
+CURRENT_CONFIG = "production"
+DEBUG = false
+TESTING = false
+PRODUCTION = true
+
+
+# Dirs
+DEV_IMG_FOLDER = ""
+
+
+[TESTING]
+CURRENT_CONFIG = "testing"
+DEBUG = true
+TESTING = true
+PRODUCTION = false
+LOGIN_DISABLED = true
