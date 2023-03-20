@@ -11,6 +11,13 @@ DynaConf usually consists of 3 files:
 
 For this showcase config.toml is tracked by git. For later use id recommend adding it to .gitignore
 
+Loading settings will usually work as follows:
+
+```
+from config.config import settings
+
+```
+
 # Running the app with different configs
 
 ```bash
@@ -57,3 +64,19 @@ python3 src/app.py
 >>> [stacktrace]
 >>> dynaconf.validator.ValidationError: TCP_SERVER_PORT must gte 1000 but it is 1 in env PRODUCTION
 ```
+
+
+# Exporting
+
+Dynaconf is not really designed to write configurations back to a settings file.
+But it is still possible to export toml using
+
+```python
+loaders.write('out.toml', settings.as_dict(), env="testing")
+```
+
+This will create a file calld `out.toml` with a single environment named "testing".
+Writing back to the original file (`settings.toml`) would cause an override.
+
+Therefore I suggest writing any settings to a separate file (i.e. `runtime_settings.toml`) and sync the current settings in there.
+`settings.toml` can then be used to provide default values if the app is launched the first time
